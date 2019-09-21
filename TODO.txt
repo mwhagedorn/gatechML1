@@ -1,0 +1,10 @@
+Summaries
+
+timing for each training run, using:
+
+For time, I initiated an empty df
+Then did a for loop through training sizes
+In that loop,  it does the train test split, then a grid search with one parameter with one value so cv results are just one row
+I append that to the df
+Set index to train size list and can plot from that
+
