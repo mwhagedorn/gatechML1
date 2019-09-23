@@ -34,6 +34,46 @@ y = data['Class']
 
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=23)
 
+def plot_time_complexity(clf, X, y, title='Time curve'):
+    """
+    Plot the time curve of a classifier
+    :param clf: the classifier
+    :param X: the entire training set
+    :param y: the entire results column
+    :param title: the title for the plot
+    """
+    import time
+    training_pct = np.linspace(0.10, 0.9, 10)
+    data = []
+    for train in training_pct:
+        test_pct = 1.0 - train
+        X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=test_pct, random_state=23)
+        t0 = time.time()
+        clf.fit(X_train, y_train)
+        t1 = time.time()
+        t2 = time.time()
+        clf.predict(X_test)
+        t3 = time.time()
+        times_fit = t1-t0
+        times_pred = t3-t2
+        data.append([train, times_fit, times_pred])
+
+    data = np.asarray(data)
+    train_sizes =data[:,0]
+    train_times =data[:,1]
+    pred_time = data[:,2]
+
+    # Draw lines
+    plt.plot(train_sizes, train_times, '--', color="#111111", label="Training times")
+    plt.plot(train_sizes, pred_time, color="#111111", label="Prediction times")
+
+    # Create plot
+    plt.title(title)
+    plt.xlabel("Training Set Size"), plt.ylabel("Time"), plt.legend(loc="best")
+    plt.tight_layout()
+
+    plt.show()
+
 def get_valid_filename(s):
     s = s.lower()
     s = str(s).strip().replace(' ', '_')
@@ -161,7 +201,7 @@ def stats_svc_C(clf, type='rbf'):
 
 
 clf = svm.SVC(kernel='rbf', C=750, random_state=23)
-#stats_svc_gamma(clf)
+stats_svc_gamma(clf)
 # # gamma is 1.0
 # #
 clf = svm.SVC(kernel='rbf', random_state=23)
@@ -176,11 +216,11 @@ def C_range(c):
 #C_range(2)
 
 clf = svm.SVC(kernel='rbf', C=2, random_state=23, gamma=1.0 )
-#run_analysis(X,y, clf, "SVC(rbf) C=2, gamma=1")
-#clf.fit(X_train, y_train)
-#y_pred = clf.predict(X_test)
-#print (confusion_matrix(y_test,y_pred))
-#plot_confusion_matrix(y_test, y_pred, "Tuned SVC (rbf)")
+run_analysis(X,y, clf, "SVC(rbf) C=2, gamma=1")
+clf.fit(X_train, y_train)
+y_pred = clf.predict(X_test)
+print (confusion_matrix(y_test,y_pred))
+plot_confusion_matrix(y_test, y_pred, "Tuned SVC (rbf)")
 
 
 clf = svm.SVC(kernel='linear', random_state=23, C=1.5 )
@@ -189,18 +229,18 @@ stats_svc_C(clf, type='linear')
 clf = svm.SVC(kernel='linear', random_state=23, C=1.1 )
 run_analysis(X_train, y_train, clf, 'SVM(linear)')
 
-# clf = svm.SVC(kernel='linear', random_state=23)
-# stats_svc_C(clf, type='linear')
-# #1.25 for linear
+clf = svm.SVC(kernel='linear', random_state=23)
+stats_svc_C(clf, type='linear')
+#1.25 for linear
 clf = svm.SVC(kernel='linear', C=1, random_state=23)
 
 # run_analysis(X,y, clfl, 'SVM(linear)')
 #
-clf = svm.SVC(kernel='linear', C=1.25, random_state=23)
-clf.fit(X_train.values, y_train.values)
-y_pred = clf.predict(X_test.values)
-print (confusion_matrix(y_test,y_pred))
-plot_confusion_matrix(y_test, y_pred, title="SVC linear, C one-two-five")
+# clf = svm.SVC(kernel='linear', C=1.25, random_state=23)
+# clf.fit(X_train.values, y_train.values)
+# y_pred = clf.predict(X_test.values)
+# print (confusion_matrix(y_test,y_pred))
+# plot_confusion_matrix(y_test, y_pred, title="SVC linear, C one-two-five")
 #
 # clf = svm.SVC(kernel='linear', random_state=23)
 # clf.fit(X_train.values, y_train.values)
@@ -208,19 +248,6 @@ plot_confusion_matrix(y_test, y_pred, title="SVC linear, C one-two-five")
 # print (confusion_matrix(y_test,y_pred))
 # plot_confusion_matrix(y_test, y_pred, title="SVC linear defaults")
 #
-#
-# clf = svm.SVC(kernel='rbf', C=1.25, random_state=23)
-# run_analysis(X,y, clf, 'SVM(rbf) C_one-two-five')
-#
-# clf = svm.SVC(kernel='rbf', C=8.0, random_state=23)
-# run_analysis(X,y, clf, 'SVM(rbf) C_eight')
-#
-# clf = svm.SVC(kernel='rbf', C=10, random_state=23)
-# run_analysis(X,y, clf, 'SVM(rbf) C_ten')
-#
-# clf = svm.SVC(kernel='rbf', C=15, random_state=23)
-# run_analysis(X,y, clf, 'SVM(rbf) C_fifteen')
-
 
 
 
@@ -228,13 +255,6 @@ plot_confusion_matrix(y_test, y_pred, title="SVC linear, C one-two-five")
 # function’s margin. For larger values of C, a smaller margin will be accepted if the decision function is better at
 # classifying all training points correctly. A lower C will encourage a larger margin, therefore a simpler decision
 # function, at the cost of training accuracy. In other words``C`` behaves as a regularization parameter in the SVM.
-
-# try scaling
-# clf = make_pipeline(StandardScaler(),clfl)
-# run_analysis(X,y, clf, 'SVM(linear) - scaled data')
-
-
-
 
 
 #NOTE:  linear svm tend to do better on high dimensional spaces
@@ -247,10 +267,18 @@ plot_confusion_matrix(y_test, y_pred, title="SVC linear, C one-two-five")
 # clf = svm.SVC(kernel='poly', degree=2, random_state=23)
 # run_analysis(X,y, clf, 'SVM(poly-2)')
 #
-# clf = svm.SVC(kernel='rbf', gamma=1.0, random_state=23, C=0.75)
+clf = svm.SVC(kernel='rbf', gamma=1.0, random_state=23, C=0.75)
 # run_analysis(X,y, clf, 'SVM(rbf, 1,0.75)')
 # C is 0.75
 
 
+clf = svm.SVC(kernel='rbf', C=2, random_state=23, gamma=1.0, verbose=20 )
+plot_time_complexity(clf, X, y, 'Svm (rbf) Time Complexity')
 
+clf = svm.SVC(kernel='linear', C=1.25, random_state=23, verbose=20)
+plot_time_complexity(clf, X, y, 'Svm (linear) Time Complexity')
 
+clf = svm.SVC(kernel='linear', C=1.25, random_state=23, verbose=20)
+clf.fit(X_train, y_train)
+y_pred = clf.predict(X_test)
+plot_confusion_matrix(y_test, y_pred, "SVM(linear) CM")

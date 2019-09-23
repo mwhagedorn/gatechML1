@@ -1,7 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="41e7c5b9-3d48-4547-9c66-2f47dee361d1" name="Default Changelist" comment="" />
+    <list default="true" id="41e7c5b9-3d48-4547-9c66-2f47dee361d1" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/telco_churn/time_plotter.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TODO.txt" beforeDir="false" afterPath="$PROJECT_DIR$/TODO.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sonar/boosting.py" beforeDir="false" afterPath="$PROJECT_DIR$/sonar/boosting.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sonar/decision_tree.py" beforeDir="false" afterPath="$PROJECT_DIR$/sonar/decision_tree.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sonar/diagrams/boost_vc_num_estimators.png" beforeDir="false" afterPath="$PROJECT_DIR$/sonar/diagrams/boost_vc_num_estimators.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sonar/diagrams/svc_linear_c_one-two-five.png" beforeDir="false" afterPath="$PROJECT_DIR$/sonar/diagrams/svc_linear_c_one-two-five.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sonar/diagrams/untuned_adaboost_cm.png" beforeDir="false" afterPath="$PROJECT_DIR$/sonar/diagrams/untuned_adaboost_cm.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sonar/diagrams/untuned_dt_baseline_lc.png" beforeDir="false" afterPath="$PROJECT_DIR$/sonar/diagrams/untuned_dt_baseline_lc.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sonar/knn.py" beforeDir="false" afterPath="$PROJECT_DIR$/sonar/knn.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sonar/nn.py" beforeDir="false" afterPath="$PROJECT_DIR$/sonar/nn.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sonar/svc.py" beforeDir="false" afterPath="$PROJECT_DIR$/sonar/svc.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/telco_churn/boosting.py" beforeDir="false" afterPath="$PROJECT_DIR$/telco_churn/boosting.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/telco_churn/decision_tree.py" beforeDir="false" afterPath="$PROJECT_DIR$/telco_churn/decision_tree.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/telco_churn/diagrams/KNN-LC.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/telco_churn/diagrams/KNN_SBC.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/telco_churn/diagrams/KNN_lc_tuned.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/telco_churn/diagrams/KNN_num_features.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/telco_churn/diagrams/sonar.all-data.arff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/telco_churn/diagrams/svc_c1_c025.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/telco_churn/diagrams/svc_cm_tuned.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/telco_churn/diagrams/svc_rbf_gamma.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/telco_churn/diagrams/svm_lc_final.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/telco_churn/diagrams/svm_vc_C.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/telco_churn/diagrams/val_svm_rbf_c.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/telco_churn/knn.py" beforeDir="false" afterPath="$PROJECT_DIR$/telco_churn/knn.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/telco_churn/nn.py" beforeDir="false" afterPath="$PROJECT_DIR$/telco_churn/nn.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/telco_churn/svc.py" beforeDir="false" afterPath="$PROJECT_DIR$/telco_churn/svc.py" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -11,8 +41,13 @@
   <component name="FavoritesManager">
     <favorites_list name="supervised_learning" />
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="ProjectId" id="1QFueVR80u7CA69STArVaI4xsNp" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/chess" />
     <property name="node.js.detected.package.eslint" value="true" />
@@ -48,8 +83,8 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.boosting (1)">
-    <configuration name="boosting (1)" type="PythonConfigurationType" factoryName="Python" temporary="true">
+  <component name="RunManager" selected="Python.svc">
+    <configuration name="boosting" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="supervised_learning" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -57,34 +92,12 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/telco_churn" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/sonar" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/telco_churn/boosting.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="decision_tree (1)" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="supervised_learning" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/telco_churn" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/telco_churn/decision_tree.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/sonar/boosting.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -115,7 +128,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="nn" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="nn (1)" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="supervised_learning" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -123,12 +136,12 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/telco_churn" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/sonar" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/telco_churn/nn.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/sonar/nn.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -159,13 +172,35 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="svc" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="supervised_learning" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/telco_churn" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/telco_churn/svc.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.boosting (1)" />
-        <item itemvalue="Python.nn" />
-        <item itemvalue="Python.decision_tree (1)" />
-        <item itemvalue="Python.knn (1)" />
+        <item itemvalue="Python.svc" />
         <item itemvalue="Python.svc (1)" />
+        <item itemvalue="Python.knn (1)" />
+        <item itemvalue="Python.boosting" />
+        <item itemvalue="Python.nn (1)" />
       </list>
     </recent_temporary>
   </component>
@@ -187,19 +222,30 @@
       <workItem from="1568414527928" duration="46804000" />
       <workItem from="1568581562937" duration="18643000" />
       <workItem from="1568693450989" duration="5919000" />
-      <workItem from="1568826359269" duration="51878000" />
+      <workItem from="1568826359269" duration="86500000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/sonar/nn.py</url>
-          <line>184</line>
+          <line>223</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
@@ -233,24 +279,44 @@
           <option name="timeStamp" value="21" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/telco_churn/knn.py</url>
-          <line>240</line>
-          <option name="timeStamp" value="37" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/sonar/boosting.py</url>
-          <line>139</line>
+          <line>179</line>
           <option name="timeStamp" value="40" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/sonar/boosting.py</url>
-          <line>184</line>
+          <line>222</line>
           <option name="timeStamp" value="41" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/telco_churn/boosting.py</url>
-          <line>115</line>
+          <line>155</line>
           <option name="timeStamp" value="50" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/telco_churn/knn.py</url>
+          <line>205</line>
+          <option name="timeStamp" value="58" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/telco_churn/decision_tree.py</url>
+          <line>84</line>
+          <option name="timeStamp" value="65" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/telco_churn/svc.py</url>
+          <line>78</line>
+          <option name="timeStamp" value="66" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/sonar/decision_tree.py</url>
+          <line>39</line>
+          <option name="timeStamp" value="68" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/telco_churn/decision_tree.py</url>
+          <line>227</line>
+          <option name="timeStamp" value="69" />
         </line-breakpoint>
       </breakpoints>
       <default-breakpoints>
@@ -263,17 +329,17 @@
     </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/supervised_learning$knn.coverage" NAME="knn Coverage Results" MODIFIED="1568592246999" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/telco_churn" />
-    <SUITE FILE_PATH="coverage/supervised_learning$svc.coverage" NAME="svc Coverage Results" MODIFIED="1568598517961" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/telco_churn" />
-    <SUITE FILE_PATH="coverage/supervised_learning$knn__1_.coverage" NAME="knn (1) Coverage Results" MODIFIED="1569019189641" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/sonar" />
+    <SUITE FILE_PATH="coverage/supervised_learning$knn.coverage" NAME="knn Coverage Results" MODIFIED="1569172385933" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/telco_churn" />
+    <SUITE FILE_PATH="coverage/supervised_learning$svc.coverage" NAME="svc Coverage Results" MODIFIED="1569192624557" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/telco_churn" />
+    <SUITE FILE_PATH="coverage/supervised_learning$knn__1_.coverage" NAME="knn (1) Coverage Results" MODIFIED="1569181225016" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/sonar" />
     <SUITE FILE_PATH="coverage/supervised_learning$decision_tree__2_.coverage" NAME="decision_tree (2) Coverage Results" MODIFIED="1568573526887" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/telco_churn" />
-    <SUITE FILE_PATH="coverage/supervised_learning$nn.coverage" NAME="nn Coverage Results" MODIFIED="1569037545755" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/telco_churn" />
-    <SUITE FILE_PATH="coverage/supervised_learning$boosting__1_.coverage" NAME="boosting (1) Coverage Results" MODIFIED="1569089352971" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/telco_churn" />
-    <SUITE FILE_PATH="coverage/supervised_learning$decision_tree.coverage" NAME="decision_tree Coverage Results" MODIFIED="1568845890259" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/sonar" />
-    <SUITE FILE_PATH="coverage/supervised_learning$decision_tree__1_.coverage" NAME="decision_tree (1) Coverage Results" MODIFIED="1569033106033" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/telco_churn" />
-    <SUITE FILE_PATH="coverage/supervised_learning$nn__1_.coverage" NAME="nn (1) Coverage Results" MODIFIED="1568889527499" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/sonar" />
-    <SUITE FILE_PATH="coverage/supervised_learning$svc__1_.coverage" NAME="svc (1) Coverage Results" MODIFIED="1568968890942" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/sonar" />
+    <SUITE FILE_PATH="coverage/supervised_learning$nn.coverage" NAME="nn Coverage Results" MODIFIED="1569159751545" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/telco_churn" />
+    <SUITE FILE_PATH="coverage/supervised_learning$boosting__1_.coverage" NAME="boosting (1) Coverage Results" MODIFIED="1569170918446" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/telco_churn" />
+    <SUITE FILE_PATH="coverage/supervised_learning$decision_tree.coverage" NAME="decision_tree Coverage Results" MODIFIED="1569176418319" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/sonar" />
+    <SUITE FILE_PATH="coverage/supervised_learning$decision_tree__1_.coverage" NAME="decision_tree (1) Coverage Results" MODIFIED="1569159733745" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/telco_churn" />
+    <SUITE FILE_PATH="coverage/supervised_learning$nn__1_.coverage" NAME="nn (1) Coverage Results" MODIFIED="1569177577693" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/sonar" />
+    <SUITE FILE_PATH="coverage/supervised_learning$svc__1_.coverage" NAME="svc (1) Coverage Results" MODIFIED="1569192422906" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/sonar" />
     <SUITE FILE_PATH="coverage/supervised_learning$analysis.coverage" NAME="analysis Coverage Results" MODIFIED="1567890911157" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/supervised_learning$boosting.coverage" NAME="boosting Coverage Results" MODIFIED="1568934276968" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/sonar" />
+    <SUITE FILE_PATH="coverage/supervised_learning$boosting.coverage" NAME="boosting Coverage Results" MODIFIED="1569177603872" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/sonar" />
   </component>
 </project>

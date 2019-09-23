@@ -1,19 +1,16 @@
+import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
-from sklearn.model_selection import learning_curve
-import matplotlib.pyplot as plt
-from pandas import DataFrame
-from sklearn.preprocessing import StandardScaler
-from sklearn.model_selection import train_test_split
-from sklearn.model_selection import validation_curve
 from sklearn import preprocessing
 from sklearn.dummy import DummyClassifier
-from sklearn.metrics import accuracy_score, confusion_matrix
-from sklearn.metrics import precision_score
-from sklearn.metrics import classification_report
-
+from sklearn.metrics import accuracy_score
 from sklearn.metrics import confusion_matrix
+from sklearn.metrics import precision_score
+from sklearn.model_selection import learning_curve
+from sklearn.model_selection import train_test_split
+from sklearn.model_selection import validation_curve
 from sklearn.tree import DecisionTreeClassifier
+
 
 data = pd.read_csv('customer_churn.csv',header=0)
 
@@ -54,6 +51,46 @@ y = data['Churn']
 
 unique_elements, counts_elements = np.unique(y, return_counts=True)
 print(counts_elements)
+
+def plot_time_complexity(clf, X, y, title='Time curve'):
+    """
+    Plot the time curve of a classifier
+    :param clf: the classifier
+    :param X: the entire training set
+    :param y: the entire results column
+    :param title: the title for the plot
+    """
+    import time
+    training_pct = np.linspace(0.10, 0.9, 10)
+    data = []
+    for train in training_pct:
+        test_pct = 1.0 - train
+        X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=test_pct, random_state=23)
+        t0 = time.time()
+        clf.fit(X_train, y_train)
+        t1 = time.time()
+        t2 = time.time()
+        clf.predict(X_test)
+        t3 = time.time()
+        times_fit = t1-t0
+        times_pred = t3-t2
+        data.append([train, times_fit, times_pred])
+
+    data = np.asarray(data)
+    train_sizes =data[:,0]
+    train_times =data[:,1]
+    pred_time = data[:,2]
+
+    # Draw lines
+    plt.plot(train_sizes, train_times, '--', color="#111111", label="Training times")
+    plt.plot(train_sizes, pred_time, color="#111111", label="Prediction times")
+
+    # Create plot
+    plt.title(title)
+    plt.xlabel("Training Set Size"), plt.ylabel("Time"), plt.legend(loc="best")
+    plt.tight_layout()
+
+    plt.show()
 
 def plot_confusion_matrix(y_test,y_pred, title="Confusion Matrix"):
     cm = confusion_matrix(y_test,y_pred)
@@ -130,11 +167,11 @@ def run_analysis(X,y, classifier, title):
 
     plt.show()
 
-# clf = DecisionTreeClassifier(random_state=23, criterion="entropy")
-# run_analysis(X_train,y_train, clf, title="DT defaults")
-# clf = DecisionTreeClassifier(random_state=23, criterion="entropy")
-# clf.fit(X_train, y_train)
-# y_pred = clf.predict(X_test)
+clf = DecisionTreeClassifier(random_state=23, criterion="entropy")
+run_analysis(X_train,y_train, clf, title="DT defaults")
+clf = DecisionTreeClassifier(random_state=23, criterion="entropy")
+clf.fit(X_train, y_train)
+y_pred = clf.predict(X_test)
 
 
 def stats_dt_max_depth(clf):
@@ -159,11 +196,11 @@ def stats_dt_max_depth(clf):
     plt.legend(loc="best")
     plt.show()
 
-# clf = DecisionTreeClassifier(random_state=23, criterion="entropy")
-# stats_dt_max_depth(clf)
-# clf = DecisionTreeClassifier(random_state=23, criterion="entropy", max_depth=5)
-# clf.fit(X_train, y_train)
-# y_pred = clf.predict(X_test)
+clf = DecisionTreeClassifier(random_state=23, criterion="entropy")
+stats_dt_max_depth(clf)
+clf = DecisionTreeClassifier(random_state=23, criterion="entropy", max_depth=5)
+clf.fit(X_train, y_train)
+y_pred = clf.predict(X_test)
 # max_depth = 5
 
 def stats_dt_min_samples_leaf(clf):
@@ -188,8 +225,8 @@ def stats_dt_min_samples_leaf(clf):
     plt.legend(loc="best")
     plt.show()
 
-#clf = DecisionTreeClassifier(random_state=23, criterion="entropy")
-#stats_dt_min_samples_leaf(clf)
+clf = DecisionTreeClassifier(random_state=23, criterion="entropy")
+stats_dt_min_samples_leaf(clf)
 # min samples_leaf = 305
 
 #clf = DecisionTreeClassifier(random_state=23, criterion="entropy", max_depth=5, min_samples_leaf=305)
@@ -201,6 +238,9 @@ clf = DecisionTreeClassifier(random_state=23, criterion="entropy", max_depth=5, 
 
 run_analysis(X_train,y_train, clf, "DT - depth 5, min_samples_leaf=300")
 clf = DecisionTreeClassifier(random_state=23, criterion="entropy")
+
+clf = DecisionTreeClassifier(random_state=23, criterion="entropy", max_depth=5, min_samples_leaf=305)
+plot_time_complexity(clf, X, y, 'Time complexity: DT')
 
 run_analysis(X,y, clf, "DT Unprunned")
 

@@ -1,7 +1,7 @@
 import numpy as np
 import pandas as pd
 from sklearn.metrics import confusion_matrix, accuracy_score, precision_score
-from sklearn.model_selection import learning_curve
+from sklearn.model_selection import learning_curve, GridSearchCV
 import matplotlib.pyplot as plt
 from pandas import DataFrame
 from sklearn.preprocessing import StandardScaler
@@ -44,6 +44,46 @@ X = data[data.columns[0:-1]]
 y = data['Churn']
 
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=23)
+
+def plot_time_complexity(clf, X, y, title='Time curve'):
+    """
+    Plot the time curve of a classifier
+    :param clf: the classifier
+    :param X: the entire training set
+    :param y: the entire results column
+    :param title: the title for the plot
+    """
+    import time
+    training_pct = np.linspace(0.10, 0.9, 10)
+    data = []
+    for train in training_pct:
+        test_pct = 1.0 - train
+        X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=test_pct, random_state=23)
+        t0 = time.time()
+        clf.fit(X_train, y_train)
+        t1 = time.time()
+        t2 = time.time()
+        clf.predict(X_test)
+        t3 = time.time()
+        times_fit = t1-t0
+        times_pred = t3-t2
+        data.append([train, times_fit, times_pred])
+
+    data = np.asarray(data)
+    train_sizes =data[:,0]
+    train_times =data[:,1]
+    pred_time = data[:,2]
+
+    # Draw lines
+    plt.plot(train_sizes, train_times, '--', color="#111111", label="Training times")
+    plt.plot(train_sizes, pred_time, color="#111111", label="Prediction times")
+
+    # Create plot
+    plt.title(title)
+    plt.xlabel("Training Set Size"), plt.ylabel("Time"), plt.legend(loc="best")
+    plt.tight_layout()
+
+    plt.show()
 
 def plot_confusion_matrix(y_test,y_pred, title="Confusion Matrix"):
     cm = confusion_matrix(y_test,y_pred)
@@ -170,6 +210,23 @@ clf = MLPClassifier(solver='lbfgs',
 stats_nn_with_hidden_layer(clf)
 # 10 seems best
 
+# def training_times_per_iteration(clf):
+#     print(clf.get_params().keys())
+#     params = {'n_iter': [10,20,40, 80, 100]}
+#     gs = GridSearchCV(clf, params, scoring='accuracy', cv=10)
+#     df = gs.fit(X_train, y_train)
+#     print(gs.best_params_)
+#
+#
+# clf = MLPClassifier(solver='lbfgs',
+#                     random_state=23,
+#                     shuffle=True,
+#                     activation='relu',
+#                     hidden_layer_sizes=(10,)
+#                     )
+#
+# training_times_per_iteration(clf)
+
 def stats_nn_with_max_iteration(clf):
     param_range = np.linspace(1, 15, 10)
     train_scores, test_scores = validation_curve(clf, X_train, y_train, "max_iter", param_range, cv=10)
@@ -220,3 +277,13 @@ clf.fit(X_train, y_train)
 y_pred = clf.predict(X_test)
 print (confusion_matrix(y_test,y_pred))
 plot_confusion_matrix(y_test, y_pred, "Tuned NN")
+
+clf = MLPClassifier(solver='lbfgs',
+                    random_state=23,
+                    shuffle=True,
+                    activation='relu',
+                    hidden_layer_sizes=(16,),
+                    max_iter=10
+                    )
+
+plot_time_complexity(clf, X, y, "NN Time Complexity")

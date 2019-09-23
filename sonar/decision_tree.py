@@ -37,6 +37,45 @@ data = data.reindex(np.random.RandomState(seed=42).permutation(data.index))
 X = data.drop('Class', axis=1)
 y = data['Class']
 
+def plot_time_complexity(clf, X, y, title='Time curve'):
+    """
+    Plot the time curve of a classifier
+    :param clf: the classifier
+    :param X: the entire training set
+    :param y: the entire results column
+    :param title: the title for the plot
+    """
+    import time
+    training_pct = np.linspace(0.10, 0.9, 10)
+    data = []
+    for train in training_pct:
+        test_pct = 1.0 - train
+        X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=test_pct, random_state=23)
+        t0 = time.time()
+        clf.fit(X_train, y_train)
+        t1 = time.time()
+        t2 = time.time()
+        clf.predict(X_test)
+        t3 = time.time()
+        times_fit = t1-t0
+        times_pred = t3-t2
+        data.append([train, times_fit, times_pred])
+
+    data = np.asarray(data)
+    train_sizes =data[:,0]
+    train_times =data[:,1]
+    pred_time = data[:,2]
+
+    # Draw lines
+    plt.plot(train_sizes, train_times, '--', color="#111111", label="Training times")
+    plt.plot(train_sizes, pred_time, color="#111111", label="Prediction times")
+
+    # Create plot
+    plt.title(title)
+    plt.xlabel("Training Set Size"), plt.ylabel("Time"), plt.legend(loc="best")
+    plt.tight_layout()
+
+    plt.show()
 
 def plot_confusion_matrix(y_test, y_pred, title="Confusion Matrix"):
     cm = confusion_matrix(y_test, y_pred)
@@ -199,5 +238,6 @@ y_pred = clf.predict(X_test.values)
 print(confusion_matrix(y_test, y_pred))
 plot_confusion_matrix(y_test, y_pred, title="DT depth=4, min_samp_leaf=30 ")
 
+clf = DecisionTreeClassifier(random_state=23, min_samples_leaf=30, max_depth=4)
+plot_time_complexity(clf, X, y, "DT Time Complexity")
 
-#
