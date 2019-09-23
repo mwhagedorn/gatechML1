@@ -1,5 +1,7 @@
 Assignment 1:  supervised learning
 
+download the code for this assignment at https://github.com/mwhagedorn/gatechML1.git
+
 To run the examples first install conda 4.6.14.   You can see all the relevant packages in the requirements.txt file
 if you want to see packages used
 
